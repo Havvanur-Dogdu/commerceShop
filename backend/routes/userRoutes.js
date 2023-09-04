@@ -9,7 +9,6 @@ import {
   deleteUser,
   getUserById,
   updateUser,
-  createUserFavorite,
 } from '../controllers/userController.js'
 import { protect, admin } from '../middleware/authMiddleware.js'
 
@@ -25,7 +24,5 @@ router
   .delete(protect, admin, deleteUser)
   .get(protect, admin, getUserById)
   .put(protect, admin, updateUser)
-  router.route('/:id/favorites').post(protect, createUserFavorite)
-
   
 export default router

@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
+
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
@@ -10,6 +12,9 @@ import ProductCarousel from '../components/ProductCarousel'
 import { listProducts } from '../actions/productActions'
 
 const HomeScreen = ({ match }) => {
+
+  const filter = match.params.filter
+
   const keyword = match.params.keyword
 
   const pageNumber = match.params.pageNumber || 1
@@ -20,31 +25,36 @@ const HomeScreen = ({ match }) => {
   const { loading, error, products, page, pages } = productList
 
   useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber))
-  }, [dispatch, keyword, pageNumber])
+    dispatch(listProducts(keyword, pageNumber, filter))
+  }, [dispatch, keyword, pageNumber, filter])
 
   return (
     <>
-    {!keyword && <ProductCarousel />}
-      <br /><h1>TÜM ÜRÜNLER</h1>
-      <Filter />
+    {!keyword && !filter && pageNumber === 1 && <ProductCarousel />}
+      <br />
+      <Breadcrumb>
+        <Breadcrumb.Item active>ALL PRODUCTS</Breadcrumb.Item>
+      </Breadcrumb>
+      <Filter/>
       {loading ? (
         <Loader />
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
-          <Row>
-            {products.map((product) => (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                <Product product={product} />
-              </Col>
-            ))}
-          </Row>
+         <Row>
+      {products.map((product) => (
+        <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+          <Product product={product} />
+        </Col>
+      ))}
+    </Row>
+    
           <Paginate
             pages={pages}
             page={page}
             keyword={keyword ? keyword : ''}
+            filter={filter}
           />
         </>
       )}

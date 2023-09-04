@@ -1,8 +1,8 @@
-import React, { Component, useState,useEffect } from 'react'
+import React, { useState } from 'react'
 import ChatBot from 'react-simple-chatbot'
 import { ThemeProvider } from 'styled-components'
 import Steps from './ChatBoxSteps'
-import { browserHistory } from 'react-router'
+
 const otherFontTheme = {
   background: '#f5f8fb',
   headerBgColor: '#86bdb8',

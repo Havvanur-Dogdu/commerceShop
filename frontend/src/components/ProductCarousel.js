@@ -22,7 +22,7 @@ const ProductCarousel = () => {
     <Message variant='danger'>{error}</Message>
   ) : (
     <div style={{ paddingLeft:'30px'}}>
-    <Carousel  style={{ marginTop:'35px' ,height:'800px' }} pause='hover' className='bg-dark'>
+    <Carousel  style={{ marginTop:'60px', marginBottom:'150px', height:'600px' }} pause='hover' className='bg-dark'>
       {products.map((product) => (
         <Carousel.Item key={products._id}>
           <Link to={`/product/${product._id}`}>

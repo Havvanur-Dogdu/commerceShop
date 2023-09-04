@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { LinkContainer } from 'react-router-bootstrap'
-import { Navbar, Form, Button, Nav, Container, NavDropdown } from 'react-bootstrap'
-import { logout } from '../actions/userActions'
+import { Form, Button } from 'react-bootstrap'
+
 
 const SearchBox = ({ history }) => {
   const [keyword, setKeyword] = useState('')

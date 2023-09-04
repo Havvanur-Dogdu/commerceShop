@@ -176,34 +176,6 @@ const updateUser = asyncHandler(async (req, res) => {
   }
 })
 
-
-// @desc  Create new favorite
-// @route POST /api/users/:id/favorites
-// @access Private
-
-const createUserFavorite = asyncHandler(async (req, res) => {
-
-  const user = await User.findById(req.params.id)
-
-  if (user) {
-
-    const favorite = {
-      product: req.product._id
-    }
-
-    user.favorites.push(favorite)
-
-    await user.save()
-    res.status(201).json({ message: 'Favorilere eklendi.' })
-    const updatedUser = await user.save()
-    res.json(updatedUser)
-  } else {
-    res.status(404)
-    throw new Error('Favorilere eklemek için oturum açmalısınız.')
-  }
-})
-
-
 export {
   authUser,
   registerUser,
@@ -213,5 +185,4 @@ export {
   deleteUser,
   getUserById,
   updateUser,
-  createUserFavorite,
 }

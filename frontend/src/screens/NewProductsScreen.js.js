@@ -1,11 +1,9 @@
 import React, { useState, useEffect} from 'react'
-//import { useDispatch, useSelector } from 'react-redux'
 import {
     Row,
     Col
 } from 'react-bootstrap'
 import Product from '../components/Product'
-//import { listProducts } from '../actions/productActions'
 import axios from 'axios'
 
 const NewProductsScreen = ({ match }) => {
@@ -21,7 +19,6 @@ const NewProductsScreen = ({ match }) => {
         fetchProducts()
     },[match])
 
-    //const products = []
     return (
         <>
         <h1>YENİ ÜRÜNLER</h1> 

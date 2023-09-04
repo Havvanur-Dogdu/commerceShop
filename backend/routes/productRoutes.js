@@ -4,9 +4,7 @@ import {
   createProduct,
   deleteProduct,
   getProductById,
-  getProductStories,
   getProducts,
-  getProductsByCategory,
   updateProduct,
   createProductReview,
   getTopProducts
@@ -20,8 +18,6 @@ router
   .get(getProductById)
   .delete(protect, admin, deleteProduct)
   .put(protect, admin, updateProduct)
-router.route('/stories').get(getProductStories)
 router.route('/:id/reviews').post(protect, createProductReview)
-//router.route('/:category').get(getProductsByCategory)
 
 export default router

@@ -26,11 +26,11 @@ import {
   PRODUCT_TOP_FAIL,
 } from '../constants/productConstants'
 
-export const listProducts = (keyword = '', pageNumber = '') => async (dispatch) => {
+export const listProducts = (keyword = '', pageNumber = '', category = '', filter = '') => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST })
 
-    const { data } = await axios.get(`/api/products?keyword=${keyword}&pageNumber=${pageNumber}`)
+    const { data } = await axios.get(`/api/products?keyword=${keyword}&pageNumber=${pageNumber}&category=${category}&filter=${filter}`)
 
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
@@ -61,27 +61,6 @@ export const listProductDetails = (id) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: PRODUCT_DETAILS_FAIL,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
-    })
-  }
-}
-
-export const filterListProducts = (category) => async (dispatch) => {
-  try {
-    dispatch({ type: PRODUCT_FILTER_LIST_REQUEST })
-
-    const { data } = await axios.get(`/api/products/categories`)
-
-    dispatch({
-      type: PRODUCT_FILTER_LIST_SUCCESS,
-      payload: data,
-    })
-  } catch (error) {
-    dispatch({
-      type: PRODUCT_FILTER_LIST_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message

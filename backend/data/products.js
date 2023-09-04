@@ -5,7 +5,7 @@ const products = [
     description:
       'Yüksek bel balon formlu pantolon, kot tarzı kumaş, yüksek bel, beş cepli,uzun model,fermuarlı önden düğmeli.',
     brand: 'Manuka',
-    category:'Kadın',
+    category:'woman',
     subCategory:'woman-alt-giyim',
     price: 100.00,
     countInStock: 3,
@@ -18,7 +18,7 @@ const products = [
     description:
       'Pamuklu keten görünümlü kumaş, belden lastikli, belden ayarlama kordonu, önden dikiş detaylı, yandan ceplii.%100 pamuk',
     brand: 'Manuka',
-    category:'Kadın',
+    category:'woman',
     subCategory:'woman-alt-giyim',
     price: 100.00,
     countInStock: 3,
@@ -31,7 +31,7 @@ const products = [
     description:
       'Klasik yün palto. Yün karışımlı kumaş. Astarsız, yakalı, uzun kollu , kuşaklı ve yanlardan ceplidir.%30 Yün %70 Polyesterdir.',
     brand: 'Manuka',
-    category:'Kadın',
+    category:'woman',
     subCategory:'woman-dis-giyim',
     price: 260.00,
     countInStock: 15,
@@ -44,7 +44,7 @@ const products = [
     description:
       'ÇITÇIT DÜĞMELİ KLAPA YAKA CEKET. FERMUARLI MANŞETLİ UZUN KOLLU. FERMUARLI GÖĞÜS VE KALÇA CEPLİ. İÇ CEPLİ. ASİMETRİK METAL FERMUAR KAPAMALI.',
     brand: 'Mavi',
-    category:'Erkek',
+    category:'man',
     subCategory:'man-dis-giyim',
     price: 260.00,
     countInStock: 15,
@@ -57,7 +57,7 @@ const products = [
     description:
       'ESNEK PAMUKLU KUMAŞTAN, YAKA DETAYLI CEKET. ELASTİK MANŞETLİ UZUN KOLLU, BEL HİZASINDA BİYELİ CEPLİ VE ÖNÜ ÇITÇIT',
     brand: 'Mavi',
-    category:'Erkek',
+    category:'man',
     subCategory:'man-dis-giyim',
     price: 200.00,
     countInStock: 12,
@@ -70,7 +70,7 @@ const products = [
     description:
       'TEKNİK KUMAŞTAN KOLSUZ ŞİŞME YELEK. DİK YAKA, KALÇA HİZASINDA FERMUARLI CEPLİ. ELASTİK KENARLI VE ÖNÜ FERMUARLI.',
     brand: 'Mavi',
-    category:'Erkek',
+    category:'man',
     subCategory:'man-dis-giyim',
     price: 210.00,
     countInStock: 5,
@@ -83,7 +83,7 @@ const products = [
     description:
       'ekose kumaş, astarlı, yumuşak tüylü yüzey, düz kesim ceket, önü düğmeli, aynı kumaştan kuşaklı, önden cepli. %70 Akrilik %30 polyester.',
     brand: 'Manuka',
-    category:'Kadın',
+    category:'woman',
     subCategory:'woman-dis-giyim',
     price: 162.00,
     countInStock: 1,
@@ -96,7 +96,7 @@ const products = [
     description:
       'Flare jean, Beş cepli, metal düğme ve fermuar kapama, geniş paça,uzun boy .%97 Pamuk %3 Elastan.',
     brand: 'Manuka',
-    category:'Kadın',
+    category:'woman',
     subCategory:'woman-alt-giyim',
     price: 150.00,
     countInStock: 11,
@@ -109,7 +109,7 @@ const products = [
     description:
       'ÖNÜ YARIM FERMUARLI, DİK YAKA SWEATSHİRT. UZUN KOLLU. ÖNÜ KANGURU CEPLİ. FİTİLLİ KENARLI.',
     brand: 'Mavi',
-    category:'Erkek',
+    category:'man',
     subCategory:'man-ust-giyim',
     price: 60.99,
     countInStock: 5,
@@ -122,7 +122,7 @@ const products = [
     description:
       'AYARLANABİLİR KAPÜŞONLU VE UZUN KOLLU SWEATSHİRT. KALÇA HİZASINDA BİYELİ CEPLİ, FERMUARLI GÖĞÜS CEPLİ, FİTİLLİ ŞERİTLİ VE ÖNÜ FERMUAR KAPAMALI.',
     brand: 'Mavi',
-    category:'Erkek',
+    category:'man',
     subCategory:'man-ust-giyim',
     price: 110.99,
     countInStock: 5,
@@ -135,7 +135,7 @@ const products = [
     description:
       'UZUN KOLLU, KAPÜŞONLU, LOOSE FİT SWEATSHİRT. ÖNÜ UYUMLU SLOGANLI, KANGURU CEPLİ VE FİTİLLİ ŞERİTLİ.',
     brand: 'Mavi',
-    category:'Erkek',
+    category:'man',
     subCategory:'man-ust-giyim',
     price: 200.99,
     countInStock: 15,
@@ -148,7 +148,7 @@ const products = [
     description:
       'BÜZGÜ İPLİ AYARLANABİLİR ELASTİK BELLİ PANTOLON. ÖN CEPLİ, BİYELİ ARKA CEPLİ VE ELASTİK MANŞETLİ PAÇA.',
     brand: 'Mavi',
-    category:'Erkek',
+    category:'man',
     subCategory:'man-alt-giyim',
     price: 160.99,
     countInStock: 5,
@@ -161,7 +161,7 @@ const products = [
     description:
       'BÜZGÜ İPLİ ELASTİK BEL BANTLI SKİNNY FİT PANTOLON. FERMUARLI ÖN CEPLİ VE YAMA ARKA CEPLİ.',
     brand: 'Mavi',
-    category:'Erkek',
+    category:'man',
     subCategory:'man-alt-giyim',
     price: 150.99,
     countInStock: 15,
@@ -174,7 +174,7 @@ const products = [
     description:
       'KETEN KARIŞIMLI KUMAŞ PANTOLON. AYARLANABİLİR BÜZGÜ İPLİ ELASTİK BELLİ, ÖN CEPLİ, BİYELİ VE DÜĞMELİ ARKA CEPLİ.',
     brand: 'Mavi',
-    category:'Erkek',
+    category:'man',
     subCategory:'man-alt-giyim',
     price: 220.99,
     countInStock: 15,
@@ -187,7 +187,7 @@ const products = [
     description:
       'Kumaş Bilgisi: %85 Akrilik - %9 Elit - %6 Polyemid Ürünün iç etiket bölümünde gerekli yıkama talimatı yer almaktadır. Seyyar kemerlidir. Ürün Ölçüleri: Boy: 75 cm - Göğüs: 110 cm - Yırtmaç Boyu: 10 cm Manken üzerindeki ürünün ölçüleridir. Manken üzerindeki ürün bedeni "STANDART" bedendir. Manken Ölçüleri: Göğüs: 79 cm   Bel: 57 cm    Basen: 87 cm   Boy: 1.74 cm',
     brand: 'Hoopstore',
-    category:'Kadın',
+    category:'woman',
     subCategory:'woman-ust-giyim',
     price: 50.99,
     countInStock: 10,
@@ -200,7 +200,7 @@ const products = [
     description:
       'Kemerli kaban, yakasız,manşetleri elastik fırfırlı,uzun kollu, önü cepli,aynı kumaştan kemerli, astarsız.%62 polyester, %33 viskon,%5 likra',
     brand: 'Manuka',
-    category:'Kadın',
+    category:'woman',
     subCategory:'woman-dis-giyim',
     price: 150.99,
     countInStock: 4,
@@ -213,7 +213,7 @@ const products = [
     description:
       'Kumaş Bilgisi: %100 Soft Akrilik Ürünün iç etiket bölümünde gerekli yıkama talimatı yer almaktadır. Bisiklet yakalıdır. Sıfır kol. Ürün Ölçüleri: Boy: 76 cm - Göğüs: 120 cm - Basen: 123 cm - Yırtmaç Boyu: 10 cm (Manken üzerindeki ürünün ölçüleridir.) Manken üzerindeki ürün bedeni "STANDART" bedendir.',
     brand: 'Hoopstore',
-    category:'Kadın',
+    category:'woman',
     subCategory:'woman-ust-giyim',
     price: 70.99,
     countInStock: 1,
@@ -226,7 +226,7 @@ const products = [
     description:
       'Kumaş Bilgisi: %70 Polyester - %30 Polyester Ürünün iç etiket bölümünde gerekli yıkama talimatı yer almaktadır. Kol ucu dikişlidir. Balon kolludur. Ürün Ölçüleri: Boy: 80 cm (Manken üzerindeki ürünün ölçüleridir.) Manken üzerindeki ürün bedeni "1 (S/M)" bedendir. Bedenler arası ortalama "3-4" cm fark bulunmaktadır. Manken Ölçüleri: Göğüs: 79 cm   Bel: 57 cm    Basen: 87 cm   Boy: 1.74 cm',
     brand: 'Hoopstore',
-    category:'Kadın',
+    category:'woman',
     subCategory:'woman-ust-giyim',
     price: 60.99,
     countInStock: 15,
@@ -239,7 +239,7 @@ const products = [
     description:
       'Kumaş Bilgisi: %80 Pamuk - %15 Kaşmir - %5 Polyester Ürünün iç etiket bölümünde gerekli yıkama talimatı yer almaktadır. Reglon kol detaylı. Önden ceplidir. Cep kalınlığı: 5 cm dir. Kol ucu manşetlidir. Yandan köprülüdür. Kemer ürün ile birlikte gönderilir. Ürün Ölçüleri: Boy: 107 cm (Manken üzerindeki ürünün ölçüleridir.) Manken üzerindeki ürün bedeni "1 (S/M)" bedendir. Bedenler arası ortalama "3-4" cm fark bulunmaktadır. Manken Ölçüleri: Göğüs: 86 cm   Bel: 60 cm    Basen: 90 cm   Boy: 1.76 cm',
     brand: 'Hoopstore',
-    category:'Kadın',
+    category:'woman',
     subCategory:'woman-dis-giyim',
     price: 200.99,
     countInStock: 7,
@@ -254,7 +254,7 @@ const products = [
     description:
       'Malzeme Bilgisi: Suni Deri Yükseklik: 15 cm Genişlik: 25 cm Kalınlık: 6 cm İç kısmı astarlı ve ceplidir. Ayarlanabilir askı ve çıkarılabilir zincir detayı.',
     brand: 'Hoopstore',
-    category:'Kadın',
+    category:'woman',
     subCategory:'woman-dis-giyim',
     price: 30.99,
     countInStock: 5,
@@ -267,7 +267,7 @@ const products = [
     description:
       'Malzeme Bilgisi : Suni Deri Yükseklik: 17.5 cm Genişlik: 11.5 cm Derinlik: 4.5 cm İç kısmı astarlı ve ceplidir. Çok yönlü ayarlanabilir ve çıkarılabilir askılı.',
     brand: 'Hoopstore',
-    category:'Kadın',
+    category:'woman',
     subCategory:'woman-dis-giyim',
     price: 35.99,
     countInStock: 13,

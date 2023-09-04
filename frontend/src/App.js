@@ -10,8 +10,8 @@ import CartScreen from './screens/CartScreen'
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
 import ProfileScreen from './screens/ProfileScreen'
-import WomanProductScreen from './screens/WomanProductScreen'
-import ManProductScreen from './screens/ManProductScreen'
+import ProductByCategoryScreen from './screens/ProductByCategoryScreen'
+import ProductByFilterScreen from './screens/ProductByFilterScreen'
 import ShippingScreen from './screens/ShippingScreen'
 import PaymentScreen from './screens/PaymentScreen'
 import PlaceOrderScreen from './screens/PlaceOrderScreen'
@@ -21,16 +21,11 @@ import UserEditScreen from './screens/UserEditScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
-import LowToHighScreen from './screens/LowToHighScreen'
-import HighToLowScreen from './screens/HighToLowScreen'
-import TheBestScreen from './screens/TheBestScreen'
 import AllProductScreen from './screens/AllProductScreen'
 import AboutUsScreen from './screens/AboutUsScreen'
 import ContactScreen from './screens/ContactScreen'
 import LegalAndPrivacyScreen from './screens/LegalAndPrivacyScreen'
 import CustomerServiceScreen from './screens/CustomerServiceScreen'
-import WomanUstGiyimScreen from './screens/WomanUstGiyimScreen'
-import WomanDisGiyimScreen from './screens/WomanDisGiyimScreen'
 import TeslimatScreen from './screens/TeslimatScreen'
 import IadelerScreen from './screens/IadelerScreen'
 import ChatBox from './components/ChatBot'
@@ -51,10 +46,6 @@ const App = () => {
           <Route path='/register' component={RegisterScreen} />
           <Route path='/profile' component={ProfileScreen} />
           <Route path='/product/:id' component={ProductScreen} />
-          <Route path='/woman' component={WomanProductScreen} />
-          <Route path='/man' component={ManProductScreen} />
-          <Route path='/woman-ust-giyim' component={WomanUstGiyimScreen} />
-          <Route path='/woman-dis-giyim' component={WomanDisGiyimScreen} />
           <Route path='/all-product' component={AllProductScreen} />
           <Route path='/contact' component={ContactScreen} />
           <Route path='/legal-and-privacy' component={LegalAndPrivacyScreen} />
@@ -62,9 +53,6 @@ const App = () => {
           <Route path='/teslimat' component={TeslimatScreen} />
           <Route path='/iadeler' component={IadelerScreen} />
           <Route path='/cart/:id?' component={CartScreen} />
-          <Route path='/fiyat-azalan' component={HighToLowScreen} />
-          <Route path='/fiyat-artan' component={LowToHighScreen} />
-          <Route path='/en-favoriler' component={TheBestScreen} />
           <Route path='/admin/userlist' component={UserListScreen} />
           <Route path='/admin/user/:id/edit' component={UserEditScreen} />
           <Route path='/admin/productlist' component={ProductListScreen} exact />
@@ -73,14 +61,25 @@ const App = () => {
             component={ProductListScreen} exact
           />
           <Route path='/admin/orderlist' component={OrderListScreen} />
-          <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
-          <Route path='/search/:keyword' component={HomeScreen} exact />
-          <Route path='/page/:pageNumber' component={HomeScreen} exact />
+          <Route path='/admin/products/:id/edit' component={ProductEditScreen} />
+          <Route path='/category/:category' component={ProductByCategoryScreen} exact />
+          <Route path='/page/:pageNumber/category/:category/filter/:filter' component={ProductByFilterScreen} exact />
+          <Route path='/category/:category/filter/:filter' component={ProductByFilterScreen} exact />
+
+          <Route path='/page/:pageNumber/category/:category' component={ProductByCategoryScreen} exact />
+          <Route path='/search/:keyword/page/:pageNumber/category/:category' component={ProductByCategoryScreen} exact/>
+          <Route path='/search/:keyword/page/:pageNumber/category/:category/filter/:filter' component={ProductByFilterScreen}/>
+          <Route path='/filter/:filter' component={ProductByFilterScreen} exact />
+          <Route path='/page/:pageNumber/filter/:filter' component={ProductByFilterScreen} exact />
+          <Route path='/search/:keyword/page/:pageNumber/filter/:filter' component={ProductByFilterScreen} />
+
           <Route
             path='/search/:keyword/page/:pageNumber'
             component={HomeScreen}
             exact
           />
+          <Route path='/search/:keyword' component={HomeScreen} exact />
+          <Route path='/page/:pageNumber' component={HomeScreen} exact />
           <Route path='/' component={HomeScreen} exact />
         </Container>
         <Route path='/about-us' component={AboutUsScreen} />

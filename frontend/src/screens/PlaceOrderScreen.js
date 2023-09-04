@@ -11,7 +11,6 @@ const PlaceOrderScreen = ({history}) => {
 
   const cart = useSelector((state) => state.cart)
 
-  // Fiyatları hesapla
   const addDecimals = (num) => {
     return (Math.round(num * 100) / 100).toFixed(2)
   }

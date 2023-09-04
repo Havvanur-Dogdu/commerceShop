@@ -6,9 +6,8 @@ import Message from '../components/Message'
 import FormContainer from '../components/FormContainer'
 import Loader from '../components/Loader'
 
-import CarouselSlider from '../components/CarouselSlider'
-
 const ContactScreen = ({ location, history }) => {
+
     const [text, setText] = useState('')
     const [sent, setSent] = useState(false)
 
@@ -30,10 +29,11 @@ const ContactScreen = ({ location, history }) => {
 
 
     return <>
-        <CarouselSlider />
         <FormContainer>
-        
+            <div style={{ marginTop: '60px' }}>
             <h1>İLETİŞİM</h1>
+            </div>
+            
             {error && <Message variant='danger'>{error}</Message>}
             {loading && <Loader />}
             {!sent ? (

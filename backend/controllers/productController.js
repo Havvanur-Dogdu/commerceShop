@@ -10,18 +10,39 @@ import express from 'express'
 const getProducts = asyncHandler(async (req, res) => {
   const pageSize = 8
   const page = Number(req.query.pageNumber) || 1
-  const keyword = req.query.keyword
+
+  const keyword = req.query.keyword && req.query.category
     ? {
+        category: req.query.category,
         name: {
           $regex: req.query.keyword,
           $options: 'i',
         },
       }
-    : {}
+    : req.query.category
+    ? {
+      category: req.query.category
+      }
+    : req.query.keyword
+    ? {
+      name: {
+        $regex: req.query.keyword,
+        $options: 'i',
+      }
+    } : {}
 
-    const count = await Product.countDocuments({ ...keyword })
+  const count = await Product.countDocuments({ ...keyword })
 
-  const products = await Product.find({ ...keyword }).limit(pageSize).skip(pageSize * (page -1))
+  const filter = req.query.filter
+  
+  const filterValue = filter === 'fiyat-artan' ? 1 : filter === 'fiyat-azalan' ? -1 : filter === 'en-favoriler' ? -1 : 0
+ 
+  const products = filter && filter === 'en-favoriler'
+  ? await Product.find({ ...keyword }).sort({ rating: filterValue }).limit(pageSize).skip(pageSize * (page -1))
+  : filter
+  ? await Product.find({ ...keyword }).sort({ price: filterValue }).limit(pageSize).skip(pageSize * (page -1))
+  : await Product.find({ ...keyword }).limit(pageSize).skip(pageSize * (page -1))
+
   res.json({ products, page, pages: Math.ceil(count / pageSize) })
 })
 
@@ -37,36 +58,6 @@ const getProductById = asyncHandler(async (req, res) => {
   } else {
     res.status(404)
     throw new Error('Product not found')
-  }
-})
-
-// @desc  Fetch all stories
-// @route GET/api/products/stories
-// @access Public
-
-const getProductStories = asyncHandler(async (req, res) => {
-  const productStories = await Product.find()
-
-  if (productStories) {
-    res.json(productStories)
-  } else {
-    res.status(404)
-    throw new Error('Product not found')
-  }
-})
-
-// @desc  Fetch products by category
-// @route GET/api/products/:category
-// @access Public
-
-const getProductsByCategory = asyncHandler(async (req, res) => {
-  const category = await Product.find().distinct('category')
-
-  if (category) {
-    res.json(category)
-  } else {
-    res.status(404)
-    throw new Error('Ürün bulunamadı')
   }
 })
 
@@ -209,8 +200,6 @@ const getTopProducts = asyncHandler(async (req, res) => {
 export {
   getProducts,
   getProductById,
-  getProductStories,
-  getProductsByCategory,
   deleteProduct,
   createProduct,
   updateProduct,
